@@ -1,0 +1,6 @@
+<form action="{{url_for('is_delete', n=todo.id)}}">
+        <input type="submit" value="Delete">
+    </form>
+    <form action="{{url_for('update', n=todo.id)}}">
+        <input type="submit" value="Update">
+    </form>

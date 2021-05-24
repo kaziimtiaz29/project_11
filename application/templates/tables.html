@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}
+ 
+{% block body %}
+
+<h4>Tables list</h4>
+
+{% for T in tables %}
+
+    <p>table no.={{T.table_no}} <br> number of people={{T.no_of_people}} 
+         <br> booking time ={{T.time_booked}} 
+         <br>meal id ={{T.meal_id}}
+        
+        </p> 
+        <form action="{{url_for('delete_table', n=T.table_no)}}">
+        <input type="submit" value="Delete"
+   
+    {% endfor %} 
+     
+{% endblock body %}

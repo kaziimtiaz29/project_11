@@ -1,0 +1,22 @@
+{% extends 'layout.html'%}
+ 
+{% block body %}
+
+<h4>Meal list</h4>
+
+{% for meal in meals %}
+
+    <p>{{meal.meal_id}} {{meal.meal_name}} {{meal.category}} {{meal.quantity}}</p> 
+    <form action="{{url_for('is_delete', n=meal.meal_id)}}">
+        <input type="submit" value="Delete">
+    </form>
+    <form action="{{url_for('update', n=meal.meal_id)}}">
+        <input type="submit" value="Update">
+    </form>
+    <form action="{{url_for('add_table', n=meal.meal_id)}}">
+        <input type="submit" value="add table">
+    </form>
+   
+    {% endfor %} 
+     
+{% endblock body %} 
